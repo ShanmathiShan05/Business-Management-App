@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --tea-dark:  #1a2e1a;
+  --tea-green: #2d5a27;
+  --tea-mid:   #4a7c3f;
+  --tea-gold:  #c8a84b;
+  --tea-cream: #f8f4ec;
+  --tea-text:  #2a2a2a;
+  --tea-muted: #6b6b5a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #111a11;
+  color: #e8e8e0;
+  min-height: 100vh;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  transition: background 0.2s;
+}
+
+.back:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 2rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admins, .users, .products, .details {
+  width: 100%;
+  background: #1d2e1d;
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--tea-gold);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+th {
+  background: var(--tea-green);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.82);
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+.btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--tea-green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.btns:hover { background: var(--tea-mid); }
+
+/* action icon links in table */
+td a[style*="blue"] { color: #5b9bd5 !important; font-size: 1rem; }
+td a[style*="red"]  { color: #e05252 !important; font-size: 1rem; }
+td a { text-decoration: none; transition: opacity 0.15s; margin: 0 2px; }
+td a:hover { opacity: 0.75; }

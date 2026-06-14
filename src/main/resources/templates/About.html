@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEA : ABOUT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/About.css}" />
+</head>
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+
+    <div class="about-hero">
+        <span class="about-hero-eyebrow"><i class="fa-solid fa-leaf"></i> &nbsp;Our Story</span>
+        <h1>About <em>Tea Bliss</em></h1>
+        <p>A family tradition of quality, freshness, and community — brewed into every cup.</p>
+    </div>
+
+    <div class="about-body">
+
+        <!-- Address -->
+        <div class="about-section-title">
+            <div class="icon"><i class="fa-solid fa-building"></i></div>
+            <h2>Our Company</h2>
+        </div>
+
+        <div class="address-card">
+            <div class="information">
+                <h3>Repacked &amp; Packed By</h3>
+                <h1>TeaNova Foods &amp; Beverage's</h1>
+                <h4>RSN : XXX/1, E Ward, Xyz Mil,</h4>
+                <h4>Near Good Shephered International School,</h4>
+                <h4>Ooty - XXXXXX, India.</h4>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Contact -->
+        <div class="about-section-title">
+            <div class="icon"><i class="fa-solid fa-address-book"></i></div>
+            <h2>Get in Touch</h2>
+        </div>
+
+        <div class="icons contact-grid">
+            <a href="https://instagram.com/abcdxyz" class="contact-card" target="_blank" rel="noopener">
+                <div class="contact-card-icon instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="contact-card-info">
+                    <label>Instagram</label>
+                    <span>@abcdxyz</span>
+                </div>
+            </a>
+
+            <a href="tel:+910909090909" class="contact-card">
+                <div class="contact-card-icon phone">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact-card-info">
+                    <label>Phone</label>
+                    <span>+91 090 909 0909</span>
+                </div>
+            </a>
+
+            <a href="mailto:xyz488@gmail.com" class="contact-card email-card" >
+                <div class="contact-card-icon email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-card-info">
+                    <label>Email</label>
+                    <span>shanmathia005@gmail.com</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

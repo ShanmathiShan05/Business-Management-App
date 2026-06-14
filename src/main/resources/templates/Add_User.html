@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin : Add User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Add_User.css}" />
+</head>
+<body>
+    <div class="form-card">
+        <h2><i class="fa-solid fa-user-plus"></i> Add New User</h2>
+
+        <form action="" th:action="@{/addingUser}" method="post">
+
+            <div class="field">
+                <label>User Name</label>
+                <input type="text" name="uname" placeholder="Enter full name" required>
+            </div>
+
+            <div class="field">
+                <label>User Email</label>
+                <input type="email" name="uemail" placeholder="user@example.com" required>
+            </div>
+
+            <div class="field">
+                <label>Mobile Number</label>
+                <input type="tel" name="unumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            </div>
+
+            <input type="hidden" name="upassword" value="2330" />
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-plus"></i> Add User
+            </button>
+        </form>
+
+        <a href="/services" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Services
+        </a>
+    </div>
+</body>
+</html>

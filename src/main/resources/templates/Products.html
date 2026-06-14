@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEA : PRODUCTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/Products.css}" />
+ </head>
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+
+    <div class="products-header">
+        <h2><i class="fa-solid fa-leaf" style="margin-right:0.6rem;color:#c8a84b;"></i>Our Premium Teas</h2>
+        <p>Handpicked. Freshly packed. Delivered with care.</p>
+    </div>
+
+    <section class="row1">
+
+        <div class="p1" th:each="s: ${products}">
+            <div class="p1-img-wrap">
+                <img th:src="@{/Images/{image}(image=${s.imageName})}" alt="Tea Product" />
+                <span class="p1-badge"><i class="fa-solid fa-star" style="margin-right:3px;"></i>Premium</span>
+            </div>
+            <div class="p1-body">
+                <h4>Product Name
+                    <span th:text="${s.pname}"></span>
+                </h4>
+                <div class="p1-divider"></div>
+                <h4 class="price">Price / kg
+                    <span th:text="'₹ ' + ${s.pprice}"></span>
+                </h4>
+                <a href="/login" class="buy-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Buy Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll(".buy-btn").forEach(function(button) {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                alert("Please login as a User to purchase products.");
+                window.location.href = "/login";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --tea-dark:  #1a2e1a;
+  --tea-green: #2d5a27;
+  --tea-mid:   #4a7c3f;
+  --tea-light: #7ab648;
+  --tea-gold:  #c8a84b;
+  --tea-cream: #f8f4ec;
+  --tea-warm:  #f0e8d5;
+  --tea-text:  #2a2a2a;
+  --tea-muted: #6b6b5a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--tea-cream);
+  color: var(--tea-text);
+  min-height: 100vh;
+}
+
+/* ── PAGE HEADER ── */
+.products-header {
+  background: linear-gradient(135deg, var(--tea-dark) 0%, var(--tea-green) 100%);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.products-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.6rem;
+}
+
+.products-header p {
+  color: rgba(255,255,255,0.68);
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── GRID ── */
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+/* ── CARD ── */
+.p1 {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(45, 90, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  border: 1px solid rgba(45, 90, 39, 0.07);
+}
+
+.p1:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(45, 90, 39, 0.16);
+}
+
+/* image wrapper with overlay badge */
+.p1-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: var(--tea-warm);
+}
+
+.p1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.p1:hover img {
+  transform: scale(1.04);
+}
+
+.p1-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--tea-gold);
+  color: var(--tea-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  border-radius: 20px;
+}
+
+/* card body */
+.p1-body {
+  padding: 1.3rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.45rem;
+}
+
+.p1 h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--tea-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.p1 h4 span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--tea-dark);
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  margin-top: 1px;
+}
+
+/* price row */
+.p1-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.p1-price-label {
+  font-size: 0.78rem;
+  color: var(--tea-muted);
+  font-weight: 400;
+}
+
+.p1 h4.price span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--tea-green);
+  letter-spacing: -0.5px;
+}
+
+.p1-divider {
+  height: 1px;
+  background: rgba(45, 90, 39, 0.08);
+  margin: 0.5rem 0;
+}
+
+/* buy button */
+.buy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  background: var(--tea-green);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  margin-top: auto;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: var(--tea-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(45, 90, 39, 0.3);
+}
+
+/* empty state */
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--tea-muted);
+}
+
+.no-products i {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--tea-mid);
+  opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+  .row1 { gap: 1.25rem; padding: 0 1rem; }
+  .products-header { padding: 2.5rem 1.25rem 2rem; }
+}

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --tea-dark:  #1a2e1a;
+  --tea-green: #2d5a27;
+  --tea-mid:   #4a7c3f;
+  --tea-gold:  #c8a84b;
+  --tea-cream: #f8f4ec;
+  --tea-warm:  #f0e8d5;
+  --tea-text:  #2a2a2a;
+  --tea-muted: #6b6b5a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--tea-cream);
+  color: var(--tea-text);
+}
+
+/* ── HERO BAND ── */
+.about-hero {
+  background: linear-gradient(135deg, var(--tea-dark) 0%, var(--tea-green) 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
+  background: var(--tea-cream);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.about-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--tea-gold);
+  border: 1px solid rgba(200,168,75,0.4);
+  background: rgba(200,168,75,0.1);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero h1 em { font-style: italic; color: var(--tea-gold); }
+
+.about-hero p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+/* ── MAIN CONTENT ── */
+.about-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+/* ── ADDRESS SECTION ── */
+.about-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section-title .icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(45, 90, 39, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tea-green);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.about-section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--tea-dark);
+}
+
+.address-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.2rem 2.5rem;
+  box-shadow: 0 2px 16px rgba(26, 46, 26, 0.07);
+  border: 1px solid rgba(45, 90, 39, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.information h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tea-gold);
+  margin-bottom: 0.6rem;
+}
+
+.information h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--tea-dark);
+  margin-bottom: 1.1rem;
+  line-height: 1.2;
+}
+
+.information h4 {
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: var(--tea-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── CONTACT CARDS ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.6rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  box-shadow: 0 2px 12px rgba(26, 46, 26, 0.06);
+  border: 1px solid rgba(45, 90, 39, 0.08);
+  transition: transform 0.22s, box-shadow 0.22s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(26, 46, 26, 0.12);
+}
+
+.contact-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-card-icon.instagram { background: rgba(200, 100, 80, 0.1); color: #c05030; }
+.contact-card-icon.phone     { background: rgba(45, 90, 39, 0.1);   color: var(--tea-green); }
+.contact-card-icon.email     { background: rgba(200, 168, 75, 0.12); color: #8a6e1a; }
+
+.contact-card-info label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--tea-muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact-card-info span {
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--tea-dark);
+}
+
+.email-card {
+    min-width: 330px;
+}
+
+.email-card .contact-card-info span {
+    word-break: break-word;
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+  height: 1px;
+  background: rgba(45, 90, 39, 0.1);
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 600px) {
+  .about-body { padding: 2.5rem 1.25rem 3rem; }
+  .address-card { padding: 1.6rem 1.5rem; }
+  .information h1 { font-size: 1.45rem; }
+}

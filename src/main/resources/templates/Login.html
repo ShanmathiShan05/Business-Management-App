@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEA : LOGIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/Login.css}" />
+</head>
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+
+    <div class="login-page-header">
+        <h1><i class="fa-solid fa-leaf" style="color:#2d5a27;margin-right:0.5rem;"></i>Welcome Back</h1>
+        <p>Sign in to your account to continue</p>
+    </div>
+
+    <div class="LoginContainer">
+
+        <!-- ── ADMIN CARD ── -->
+        <div class="admin">
+            <div class="content">
+                <span class="card-type"><i class="fa-solid fa-shield-halved"></i> Business</span>
+                <h2>Admin <em>Portal</em></h2>
+
+                <form action="" th:action="@{/adminLogin}">
+                    <div class="field">
+                        <label for="admin-email"><i class="fa-regular fa-envelope" style="margin-right:5px;"></i>Email Address</label>
+                        <input type="email" id="admin-email" name="email" placeholder="admin@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="admin-pass"><i class="fa-solid fa-lock" style="margin-right:5px;"></i>Password</label>
+                        <input type="password" id="admin-pass" name="password" placeholder="Enter your password">
+                        <small class="error-msg" th:text="${error}"></small>
+                    </div>
+
+                    <button type="submit" class="loginButton">
+                        <i class="fa-solid fa-right-to-bracket" style="margin-right:6px;"></i>Sign In as Admin
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ── USER CARD ── -->
+        <div class="user">
+            <div class="content">
+                <span class="card-type"><i class="fa-solid fa-user"></i> Customer</span>
+                <h2>User <em>Login</em></h2>
+
+                <form action="" th:action="@{/userlogin}" class="form">
+                    <div class="field">
+                        <label for="user-email"><i class="fa-regular fa-envelope" style="margin-right:5px;"></i>Email Address</label>
+                        <input type="email" id="user-email" name="userEmail" placeholder="you@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="user-pass"><i class="fa-solid fa-lock" style="margin-right:5px;"></i>Password</label>
+                        <input type="password" id="user-pass" name="userPassword" placeholder="4–8 characters"
+                               required maxlength="8" minlength="4" class="userPassword">
+                        <small class="error-msg" th:text="${error2}"></small>
+                    </div>
+
+                    <button type="submit" class="loginButton">
+                        <i class="fa-solid fa-right-to-bracket" style="margin-right:6px;"></i>Sign In
+                    </button>
+                </form>
+
+                <div class="form-divider"></div>
+                <p class="register-link">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

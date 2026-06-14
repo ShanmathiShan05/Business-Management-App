@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin : Update User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Update_User.css}" />
+</head>
+<body>
+    <div class="form-card">
+        <h2><i class="fa-solid fa-user-pen"></i> Update User Details</h2>
+
+        <form action="" th:action="@{'/updatingUser/'+${user.u_id}}" th:object="${user}">
+
+            <input type="hidden" name="uid" th:value="${user.u_id}" th:text="${user.u_id}" />
+
+            <div class="field">
+                <label>User Name</label>
+                <input type="text" name="uname" th:value="${user.uname}" required>
+            </div>
+
+            <div class="field">
+                <label>User Email</label>
+                <input type="email" name="uemail" th:value="${user.uemail}" required>
+            </div>
+
+            <div class="field">
+                <label>Mobile Number</label>
+                <input type="tel" name="unumber" th:value="${user.unumber}" pattern="[0-9]{10}">
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-floppy-disk"></i> Save Changes
+            </button>
+        </form>
+
+        <a href="/services" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Services
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --tea-dark:  #1a2e1a;
+  --tea-green: #2d5a27;
+  --tea-mid:   #4a7c3f;
+  --tea-gold:  #c8a84b;
+  --tea-cream: #f8f4ec;
+  --tea-text:  #2a2a2a;
+  --tea-muted: #6b6b5a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--tea-cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 28px rgba(26, 46, 26, 0.09);
+  border: 1px solid rgba(45, 90, 39, 0.08);
+  padding: 2.8rem 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  position: relative;
+}
+
+.form-card::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--tea-dark), var(--tea-mid));
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+
+.form-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--tea-dark);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.form-card h2 i { color: var(--tea-green); font-size: 1.1rem; }
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--tea-dark);
+  margin-bottom: 0.45rem;
+}
+
+.field input,
+.field select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(45, 90, 39, 0.2);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--tea-text);
+  background: var(--tea-cream);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  -webkit-appearance: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--tea-green);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.1);
+}
+
+.field input::placeholder { color: #b0a990; }
+
+.btn-submit {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  background: var(--tea-green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-submit:hover {
+  background: var(--tea-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 46, 26, 0.22);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--tea-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--tea-green); }

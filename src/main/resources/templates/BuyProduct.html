@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Product — Pavan Tea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/BuyProduct.css}" />
+</head>
+<body>
+
+    <!-- Welcome + Back button -->
+    <div class="welcome-banner">
+        <div class="welcome-text">
+            Welcome back, <span th:text="${name}">Customer</span>! &nbsp;<i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <a href="/login" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Login
+        </a>
+    </div>
+
+    <main class="buy-main">
+
+        <!-- Search Card -->
+        <div class="buy-card">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Find a Product</h2>
+            <form action="" th:action="@{/product/search}" method="post">
+                <div class="search-row">
+                    <input type="text" name="productName" required placeholder="Enter product name...">
+                    <button type="submit" class="btn-search">
+                        <i class="fa-solid fa-search"></i> Search
+                    </button>
+                </div>
+                <small class="search-message" th:text="${message}"></small>
+            </form>
+        </div>
+
+        <!-- Order Form (shown when product found) -->
+        <div class="buy-card" th:if="${product != null}">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Place Your Order</h2>
+            <form action="" th:action="@{/product/order}" th:object="${product}" method="post">
+                <div class="order-fields">
+
+                    <div class="order-field">
+                        <label>Product Name</label>
+                        <input type="text" name="oName" th:value="${product.pname}" readonly />
+                    </div>
+
+                    <div class="order-field">
+                        <label>Price per kg (₹)</label>
+                        <input type="text" name="oPrice" th:value="${product.pprice}" readonly />
+                    </div>
+
+                    <div class="order-field">
+                        <label>Quantity (kg)</label>
+                        <input type="number" placeholder="Minimum: 1 kg" min="1" name="oQuantity" required />
+                    </div>
+
+                    <button type="submit" class="btn-order">
+                        <i class="fa-solid fa-circle-check"></i> Confirm Order
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Orders History Table -->
+        <div class="buy-card" th:if="${orders != null}">
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> Your Orders</h2>
+            <div class="orders-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price (₹)</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total Amount (₹)</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order: ${orders}">
+                            <td th:text="${order.oName}"></td>
+                            <td th:text="${order.oPrice}"></td>
+                            <td th:text="${order.oQuantity}"></td>
+                            <td th:text="${order.totalAmmout}"></td>
+                            <td th:text="${order.orderDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
