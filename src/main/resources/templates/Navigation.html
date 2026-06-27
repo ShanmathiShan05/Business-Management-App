@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <nav th:fragment="navbar()">
-        <!-- Mobile toggle -->
-        <div class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">
-            
-        </div>
+<nav th:fragment="navbar()">
 
-        <ul>
-            <img src="/Images/logo-white.png" alt="Tea Bliss Logo" class="Owner_Logo">
-            <a href="/home"><i class="fa-solid fa-house" style="margin-right:5px;font-size:0.8rem;"></i>Home</a>
-            <a href="/products"><i class="fa-solid fa-leaf" style="margin-right:5px;font-size:0.8rem;"></i>Products</a>
-            <a href="/location"><i class="fa-solid fa-location-crosshairs" style="margin-right:5px;font-size:0.8rem;color:inherit;"></i>Locate Us</a>
-            <a href="/about"><i class="fa-solid fa-circle-info" style="margin-right:5px;font-size:0.8rem;"></i>About Us</a>
-            <a href="/login"><i class="fa-solid fa-right-to-bracket" style="margin-right:6px;font-size:0.8rem;"></i>Log In</a>
-        </ul>
-    </nav>
+    <!-- Mobile toggle -->
+    <div class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">
+
+    </div>
+
+    <ul>
+        <img src="/Images/logo-1.png" alt="Tea Bliss Logo" class="Owner_Logo">
+        <a href="/home"><i class="fa-solid fa-house" style="margin-right:5px;font-size:0.8rem;"></i>Home</a>
+        <a href="/products"><i class="fa-solid fa-leaf" style="margin-right:5px;font-size:0.8rem;"></i>Products</a>
+        <a href="/location"><i class="fa-solid fa-location-crosshairs" style="margin-right:5px;font-size:0.8rem;color:inherit;"></i>Locate Us</a>
+        <a href="/about"><i class="fa-solid fa-circle-info" style="margin-right:5px;font-size:0.8rem;"></i>About Us</a>
+        <a href="/Login"><i class="fa-solid fa-right-to-bracket" style="margin-right:6px;font-size:0.8rem;"></i>Log In</a>
+    </ul>
+</nav>
+
 </body>
 </html>
