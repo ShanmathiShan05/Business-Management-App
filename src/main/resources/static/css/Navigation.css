@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --tea-dark:    #1a2e1a;
-  --tea-green:   #2d5a27;
-  --tea-mid:     #4a7c3f;
-  --tea-light:   #7ab648;
-  --tea-gold:    #c8a84b;
-  --tea-cream:   #f8f4ec;
-  --tea-warm:    #f0e8d5;
-  --tea-text:    #2a2a2a;
-  --tea-muted:   #6b6b5a;
-  --nav-h:       72px;
+  --tea-dark: #1a2e1a;
+  --tea-green: #2d5a27;
+  --tea-mid: #4a7c3f;
+  --tea-light: #7ab648;
+  --tea-gold: #c8a84b;
+  --tea-cream: #f8f4ec;
+  --tea-warm: #f0e8d5;
+  --tea-text: #2a2a2a;
+  --tea-muted: #6b6b5a;
+  --nav-h: 72px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -40,7 +46,8 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -49,7 +56,7 @@ nav ul {
   width: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--tea-gold);
+  border:  2px solid var(--tea-gold);
   margin-right: 1rem;
   flex-shrink: 0;
 }
@@ -107,6 +114,7 @@ nav a:last-child:hover {
   cursor: pointer;
   padding: 6px;
 }
+
 .nav-toggle span {
   display: block;
   width: 24px;
@@ -117,15 +125,21 @@ nav a:last-child:hover {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 1.25rem; }
 
-  .nav-toggle { display: flex; }
+  nav {
+    padding: 0 1.25rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
 
   nav ul {
     display: none;
     position: absolute;
     top: var(--nav-h);
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     flex-direction: column;
     background: var(--tea-dark);
     padding: 1rem 1.5rem 1.5rem;
@@ -133,11 +147,22 @@ nav a:last-child:hover {
     border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  nav ul.open { display: flex; }
+  nav ul.open {
+    display: flex;
+  }
 
-  nav ul::before { display: none; }
+  nav ul::before {
+    display: none;
+  }
 
-  nav a { width: 100%; padding: 0.6rem 0.8rem; }
+  nav a {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+  }
 
-  nav a:last-child { border-radius: 8px; margin-left: 0; margin-top: 0.5rem; }
+  nav a:last-child {
+    border-radius: 8px;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
