@@ -35,7 +35,7 @@
 					<h4>Organic Green Tea</h4>
 					<p>Hand-picked premium leaves rich in antioxidants for your daily wellness.</p>
 					<div class="product-meta">
-						<span class="price">$14.99</span>
+						<span class="price">₹500.99</span>
 						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 					<h4>Matcha Blend</h4>
 					<p>Ceremonial grade finely grounded Japanese stone-mill matcha powder.</p>
 					<div class="product-meta">
-						<span class="price">$24.50</span>
+						<span class="price">₹350.50</span>
 						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
 					</div>
 				</div>
@@ -64,7 +64,82 @@
 					<h4>Herbal Infusion</h4>
 					<p>A soothing, caffeine-free blend of chamomile, lavender, and mint leaves.</p>
 					<div class="product-meta">
-						<span class="price">$12.99</span>
+						<span class="price">₹400.99</span>
+						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="product-card">
+				<div class="product-image">
+					<i class="fa-solid fa-boxes-stacked"></i>
+				</div><!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>TEA : PRODUCTS</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" href="" th:href="@{/css/Home.css}" />
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div class="background">
+	   <video loop autoplay muted>
+            <source th:src="@{/Videos/teaTree.mp4}" type="video/mp4">
+       </video>
+	</div>
+
+	<main class="content-container">
+		<header class="hero-text">
+			<h1>OUR PREMIUM PRODUCTS</h1>
+			<h3>Where Quality Meets Innovation! <br /> Explore our wide range of products designed to enhance your life.</h3>
+		</header>
+
+		<section class="product-grid">
+			
+			<div class="product-card">
+				<div class="product-badge">Best Seller</div>
+				<div class="product-image">
+					<i class="fa-solid fa-leaf"></i>
+				</div>
+				<div class="product-info">
+					<h4>Organic Green Tea</h4>
+					<p>Hand-picked premium leaves rich in antioxidants for your daily wellness.</p>
+					<div class="product-meta">
+						<span class="price">₹500.99</span>
+						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="product-card">
+				<div class="product-badge">New</div>
+				<div class="product-image">
+					<i class="fa-solid fa-mug-hot"></i>
+				</div>
+				<div class="product-info">
+					<h4>Matcha Blend</h4>
+					<p>Ceremonial grade finely grounded Japanese stone-mill matcha powder.</p>
+					<div class="product-meta">
+						<span class="price">₹350.50</span>
+						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="product-card">
+				<div class="product-image">
+					<i class="fa-solid fa-jar"></i>
+				</div>
+				<div class="product-info">
+					<h4>Herbal Infusion</h4>
+					<p>A soothing, caffeine-free blend of chamomile, lavender, and mint leaves.</p>
+					<div class="product-meta">
+						<span class="price">₹400.99</span>
 						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
 					</div>
 				</div>
@@ -78,7 +153,7 @@
 					<h4>Collector's Gift Box</h4>
 					<p>An exquisite selection of our top 6 signature loose-leaf premium teas.</p>
 					<div class="product-meta">
-						<span class="price">$45.00</span>
+						<span class="price">₹450.00</span>
 						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
 					</div>
 				</div>
@@ -87,5 +162,18 @@
 		</section>
 	</main>
 </body>
+</html>
+				<div class="product-info">
+					<h4>Collector's Gift Box</h4>
+					<p>An exquisite selection of our top 6 signature loose-leaf premium teas.</p>
+					<div class="product-meta">
+						<span class="price">₹450.00</span>
+						<button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> Add</button>
+					</div>
+				</div>
+			</div>
 
+		</section>
+	</main>
+</body>
 </html>
